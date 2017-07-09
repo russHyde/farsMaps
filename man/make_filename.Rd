@@ -7,7 +7,7 @@
 make_filename(year)
 }
 \arguments{
-\item{year}{A vector of years, provided as integers (1984) 
+\item{year}{A vector of years, provided as integers (1984)
 or strings ("1984", "2001"). Do not provide R 'Date' objects or shortened
 suffixes (eg 84) for a year.}
 }
@@ -18,9 +18,4 @@ A vector of filenames.
 The FARS data is stored in a range of .bz2 files with a consistent format.
 This function takes a year (as a string or an integer, like '1984') and
 returns the .bz2 file corresponding to that year
-}
-\examples{
-make_filename(1984:1987)
-make_filename(year = c("1984", "1985"))
-
 }

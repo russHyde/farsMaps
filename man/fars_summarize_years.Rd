@@ -7,7 +7,7 @@
 fars_summarize_years(years)
 }
 \arguments{
-\item{years}{A vector of years, provided as integers or 
+\item{years}{A vector of years, provided as integers or
 strings. Only those entries that are present in the FARS data provide any
 valid returned data.}
 }
@@ -18,11 +18,11 @@ A tibble containing the count of fatalities in the FARS data
 }
 \description{
 Given a vector of years, this function will obtain all FARS data for each
-year and combine it into a summarised dataset. The count of fatailities in 
+year and combine it into a summarised dataset. The count of fatailities in
 each month in the selected years is returned. No data is returned for years
 that are absent from the available data.
 }
 \examples{
-fars_summarize_years(1984:1987)
+fars_summarize_years(2013:2014)
 
 }

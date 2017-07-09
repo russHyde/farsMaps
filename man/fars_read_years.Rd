@@ -23,6 +23,6 @@ Takes a vector of years, imports the data for each year from the FARS
 dataset and returns a list of tibbles containing the data for each year.
 }
 \examples{
-fars_read_years(c(1984, 1988))
+fars_read_years(c(2013, 2015))
 
 }
