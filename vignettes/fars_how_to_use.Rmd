@@ -1,0 +1,56 @@
+---
+title: "farsMaps: Analyse and Plot Road-Fatality Data"
+author: "Russell Hyde"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Overview
+This package contains functions and data for reading-in, summarizing and 
+plotting out data from the "Fatality Analysis Reporting System" project.
+
+To import the package run:
+
+```{r}
+# devtools::install_github("russHyde/farsMaps")
+library("farsMaps")
+```
+
+# I/O Functions
+To read in FARS data from a particular year (data for 2013-2015 are provided 
+with the package), run the following:
+
+```{r}
+fars_data <- fars_read_years(2013:2014)
+```
+
+The imported datasets contain a MONTH and a year column.
+```{r}
+head(fars_data)
+```
+
+# Summary Functions
+To summarise the fatalities in a given year, run the following:
+```{r}
+fars_summary <- fars_summarize_years(2013:2015)
+```
+
+This summarises the number of fatalities per month in each year (across all
+available states).
+
+```{r}
+fars_summary
+```
+
+# Plotting Functions
+To plot the locations of the fatalities in a given state for a particular
+year, the user should provide an integer to indicate the required state,
+and the year required. For example,
+
+```{r}
+fars_map_state(10, 2013)
+```
