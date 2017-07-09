@@ -16,10 +16,11 @@
 #' \dontrun{fars_read("some_file.csv")}
 #'
 fars_read <- function(filename) {
-        if (!file.exists(filename))
-                stop("file '", filename, "' does not exist")
+        fn <- system.file("fars_data", filename, package = "farsMaps")
+        if (!file.exists(fn))
+                stop("file '", fn, "' does not exist")
         data <- suppressMessages({
-                readr::read_csv(filename, progress = FALSE)
+                readr::read_csv(fn, progress = FALSE)
         })
         dplyr::tbl_df(data)
 }
@@ -37,8 +38,8 @@ fars_read <- function(filename) {
 #' @return       A vector of filenames.
 #'
 #' @examples
-#' make_filename(1984:1987)
-#' make_filename(year = c("1984", "1985"))
+#' make_filename(2013:2014)
+#' make_filename(year = c("2013", "2014"))
 #'
 make_filename <- function(year) {
         year <- as.integer(year)
@@ -67,15 +68,13 @@ make_filename <- function(year) {
 #' @export
 #'
 #' @examples
-#' fars_read_years(c(1984, 1988))
+#' fars_read_years(c(2013, 2015))
 #'
 fars_read_years <- function(years) {
         lapply(years, function(year) {
                 file <- make_filename(year)
                 tryCatch({
-                        dat <- fars_read(
-                          system.file("fars_data", file, package = "farsMaps")
-                          )
+                        dat <- fars_read(file)
                         dplyr::mutate(dat, year = year) %>%
                                 dplyr::select_(quote(MONTH), quote(year))
                 }, error = function(e) {
@@ -105,7 +104,7 @@ fars_read_years <- function(years) {
 #' @importFrom   tidyr         spread
 #'
 #' @examples
-#' fars_summarize_years(1984:1987)
+#' fars_summarize_years(2013:2014)
 #'
 #' @export
 #'
