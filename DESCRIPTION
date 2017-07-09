@@ -17,3 +17,4 @@ Imports: dplyr,
     magrittr,
     tidyr,
     maps
+Suggests: testthat
