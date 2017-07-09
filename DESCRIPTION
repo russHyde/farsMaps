@@ -1,11 +1,13 @@
 Package: farsMaps
 Type: Package
-Title: Functions For Reading-In, Summarizing And Plotting FARS-Datasets.
+Title: Functions For Reading-In, Summarizing And Plotting FARS-Datasets
 Version: 0.1.0
 Author: Russell Hyde <not.my@email.com>
 Maintainer: Russell Hyde <not.my@email.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Fatality-Analysis Reporting System datasets can be imported into R
+  using the functions in this package. There are also functions for summarising
+  the fatality numbers in a given year and across various US states. Maps of
+  the fatalities can be made. Some FARS data is included in the package.
 License: GPL
 Encoding: UTF-8
 LazyData: true
