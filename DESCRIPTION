@@ -17,4 +17,7 @@ Imports: dplyr,
     magrittr,
     tidyr,
     maps
-Suggests: testthat
+Suggests: testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

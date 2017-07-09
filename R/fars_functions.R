@@ -12,6 +12,8 @@
 #' @importFrom   dplyr         tbl_df
 #' @importFrom   readr         read_csv
 #'
+#' @export
+#'
 #' @examples
 #' \dontrun{fars_read("some_file.csv")}
 #'
